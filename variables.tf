@@ -40,7 +40,7 @@ variable "admin_password" {
 variable "vm_size" {
   description = "Size of the VM (GPU-enabled)"
   type        = string
-  default     = "Standard_NC24ads_A100_v4" # 1 NVIDIA Tesla V100 GPU
+  default     = "Standard_D32d_v5" # 1 NVIDIA Tesla V100 GPU
 }
 
 variable "gpu_count" {

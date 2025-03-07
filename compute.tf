@@ -75,14 +75,6 @@ resource "azurerm_lb_probe" "ssh_probe" {
 
 # Define VM sizes based on GPU count
 locals {
-  vm_size_map = {
-    1 = var.vm_size != "Standard_NC6s_v3" ? var.vm_size : "Standard_NC6s_v3"     # 1 NVIDIA Tesla V100
-    2 = "Standard_NC12s_v3"  # 2 NVIDIA Tesla V100
-    4 = "Standard_NC24s_v3"  # 4 NVIDIA Tesla V100
-    8 = "Standard_NC24ads_A100_v4"  # 8 NVIDIA A100 GPUs
-  }
-  
-  selected_vm_size = lookup(local.vm_size_map, var.gpu_count, var.vm_size)
   
   # Default setup script for ML development if custom_data_script is not provided
   default_custom_data = base64encode(<<-EOF
@@ -127,7 +119,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
   name                 = var.vmss_name
   resource_group_name  = azurerm_resource_group.rg.name
   location             = azurerm_resource_group.rg.location
-  sku                  = local.selected_vm_size
+  sku                  = var.vm_size
   instances            = var.instance_count
   admin_username       = var.admin_username
   admin_password       = var.admin_password
@@ -249,5 +241,5 @@ output "public_ip_address" {
 
 output "selected_vm_size" {
   description = "The VM size selected based on GPU count"
-  value       = local.selected_vm_size
+  value       = var.vm_size
 }
