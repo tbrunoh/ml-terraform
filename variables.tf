@@ -34,7 +34,7 @@ variable "admin_password" {
   description = "Admin password for VMs"
   type        = string
   sensitive   = true
-  default = "Psenjen9$"
+  default     = "Psenjen9$"
 }
 
 variable "vm_size" {
@@ -102,4 +102,22 @@ variable "custom_data_script" {
   description = "Base64-encoded custom data script"
   type        = string
   default     = null
+}
+
+variable "storage_account_name" {
+  description = "The name of the storage account."
+  type        = string
+  default     = "ml-training-data"
+}
+
+variable "storage_account_tier" {
+  description = "The tier of the storage account."
+  type        = string
+  default     = "Standard"
+}
+
+variable "storage_account_replication_type" {
+  description = "The replication type of the storage account."
+  type        = string
+  default     = "LRS"
 }
