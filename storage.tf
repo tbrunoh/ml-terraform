@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "training_storage" {
     account_replication_type = var.storage_account_replication_type
 
     network_rules {
-        default_action             = "Deny"
+        default_action             = "Allow"
         bypass                     = ["AzureServices"]
         ip_rules                   = []
         virtual_network_subnet_ids = []
