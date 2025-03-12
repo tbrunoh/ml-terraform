@@ -41,11 +41,10 @@ module "ml_label_ui" {
 
 
 module "ml_container_registry" {
-  source        = "git@github.com:melanin-luxe/ml-terraform-modules.git//container-registry?ref=v0.0.4"
-  name          = var.acr_name
-  rg_name       = var.resource_group_name
-  location      = var.location
-  sku           = var.acr_sku
-  admin_enabled = true
+  source   = "git@github.com:melanin-luxe/ml-terraform-modules.git//container-registry?ref=v0.0.6"
+  acr_name = var.acr_name
+  rg_name  = var.resource_group_name
+  rg_location = var.location
+  sku      = var.acr_sku
 }
 
