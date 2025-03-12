@@ -121,3 +121,54 @@ variable "storage_account_replication_type" {
   type        = string
   default     = "LRS"
 }
+
+
+
+
+variable "pg_server_name" {
+  description = "Name of the PostgreSQL server"
+  type        = string
+}
+
+variable "pg_admin_username" {
+  description = "Admin username for PostgreSQL"
+  type        = string
+  default     = "mladmin"
+}
+
+variable "pg_admin_password" {
+  description = "Admin password for PostgreSQL"
+  type        = string
+  sensitive   = true
+  default     = "4VVW1P6sriEK"
+}
+
+variable "pg_sku" {
+  description = "The SKU (pricing tier) for PostgreSQL"
+  type        = string
+  default     = "B_Standard_B1ms"
+}
+
+variable "pg_version" {
+  description = "PostgreSQL version"
+  type        = string
+  default     = "15"
+}
+
+variable "database_name" {
+  description = "Name of the PostgreSQL database"
+  type        = string
+  default     = "ml_label_studio_dev"
+}
+
+variable "public_access_start_ip" {
+  description = "Start IP for public access (0.0.0.0 allows all)"
+  type        = string
+  default     = "0.0.0.0"
+}
+
+variable "public_access_end_ip" {
+  description = "End IP for public access (255.255.255.255 allows all)"
+  type        = string
+  default     = "255.255.255.255"
+}
