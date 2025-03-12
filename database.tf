@@ -1,10 +1,4 @@
 
-# Create a resource group
-resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
-  location = var.location
-}
-
 # Create a PostgreSQL Flexible Server
 resource "azurerm_postgresql_flexible_server" "pg_server" {
   name                   = var.pg_server_name
