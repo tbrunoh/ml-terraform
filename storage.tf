@@ -30,10 +30,10 @@ output "storage_account_primary_endpoint" {
 //ML LabelUI
 
 module "ml_label_ui" {
-  source                   = "git@github.com:melanin-luxe/ml-terraform-modules.git//blob-storage?ref=v0.0.1"
-  storage_account_name     = var.ml_label_ui_storage_account_name
-  resource_group_name      = var.resource_group_name
-  location                 = var.location
-  account_tier             = var.storage_account_tier
-  account_replication_type = var.storage_account_replication_type
+  source                           = "git@github.com:melanin-luxe/ml-terraform-modules.git//blob-storage?ref=v0.0.1"
+  storage_account_name             = var.ml_label_ui_storage_account_name
+  resource_group_name              = var.resource_group_name
+  location                         = var.location
+  storage_account_tier             = var.storage_account_tier
+  storage_account_replication_type = var.storage_account_replication_type
 }
