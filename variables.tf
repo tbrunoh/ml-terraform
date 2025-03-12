@@ -147,7 +147,7 @@ variable "pg_admin_password" {
 variable "pg_sku" {
   description = "The SKU (pricing tier) for PostgreSQL"
   type        = string
-  default     = "Standard_B2s"
+  default     = "B_Standard_B2s"
 }
 
 variable "pg_version" {
