@@ -15,10 +15,10 @@ module "ml_label_pgsql" {
 # Output database connection details
 output "postgresql_server" {
   description = "PostgreSQL server hostname"
-  value       = ml_label_pgsql.postgresql_server
+  value       = module.ml_label_pgsql.postgresql_server
 }
 
 output "database_name" {
   description = "Database name"
-  value       = ml_label_pgsql.database_name
+  value       = module.ml_label_pgsql.database_name
 }
