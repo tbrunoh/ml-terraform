@@ -37,3 +37,15 @@ module "ml_label_ui" {
   storage_account_tier             = var.storage_account_tier
   storage_account_replication_type = var.storage_account_replication_type
 }
+
+
+
+module "ml_container_registry" {
+  source        = "git@github.com:melanin-luxe/ml-terraform-modules.git//container-registry?ref=v0.0.4"
+  name          = var.acr_name
+  rg_name       = var.resource_group_name
+  location      = var.location
+  sku           = var.sku
+  admin_enabled = true
+}
+
