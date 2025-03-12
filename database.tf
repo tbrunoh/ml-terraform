@@ -28,7 +28,7 @@ resource "azurerm_postgresql_flexible_server_database" "pg_database" {
   name      = var.database_name
   server_id = azurerm_postgresql_flexible_server.pg_server.id
   charset   = "UTF8"
-  collation = "en_US.UTF8"
+  collation = "en_US.utf8"
 }
 
 # Output database connection details
