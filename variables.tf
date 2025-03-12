@@ -110,6 +110,11 @@ variable "storage_account_name" {
   default     = "sdrimltdata"
 }
 
+variable "ml_label_ui_storage_account_name" {
+  description = "The ml name of the storage account."
+  type        = string
+  default     = "sdrimllabelui"
+}
 variable "storage_account_tier" {
   description = "The tier of the storage account."
   type        = string
