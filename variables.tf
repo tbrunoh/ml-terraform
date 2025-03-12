@@ -178,3 +178,15 @@ variable "public_access_end_ip" {
   type        = string
   default     = "255.255.255.255"
 }
+
+
+variable "acr_name" {
+  description = "ACR name"
+  type        = string
+  default     = "smaramlacr"
+}
+variable "acr_sku" {
+  description = "ACR name"
+  type        = string
+  default     = "Standard"
+}

@@ -45,7 +45,7 @@ module "ml_container_registry" {
   name          = var.acr_name
   rg_name       = var.resource_group_name
   location      = var.location
-  sku           = var.sku
+  sku           = var.acr_sku
   admin_enabled = true
 }
 
