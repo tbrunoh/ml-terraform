@@ -128,6 +128,7 @@ variable "storage_account_replication_type" {
 variable "pg_server_name" {
   description = "Name of the PostgreSQL server"
   type        = string
+  default     = "mldatalabeldb"
 }
 
 variable "pg_admin_username" {
