@@ -12,6 +12,15 @@ resource "azurerm_storage_account" "training_storage" {
     ip_rules                   = []
     virtual_network_subnet_ids = []
   }
+  blob_properties {
+    cors_rule {
+      allowed_origins    = ["*"]
+      allowed_methods    = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
+      allowed_headers    = ["*"]
+      exposed_headers    = ["*"]
+      max_age_in_seconds = 3600
+    }
+  }
 }
 
 output "storage_account_name" {
@@ -41,10 +50,10 @@ module "ml_label_ui" {
 
 
 module "ml_container_registry" {
-  source   = "git@github.com:melanin-luxe/ml-terraform-modules.git//container-registry?ref=v0.0.6"
-  acr_name = var.acr_name
-  rg_name  = var.resource_group_name
+  source      = "git@github.com:melanin-luxe/ml-terraform-modules.git//container-registry?ref=v0.0.6"
+  acr_name    = var.acr_name
+  rg_name     = var.resource_group_name
   rg_location = var.location
-  sku      = var.acr_sku
+  sku         = var.acr_sku
 }
 
