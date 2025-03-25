@@ -21,7 +21,7 @@ variable "vmss_name" {
 variable "instance_count" {
   description = "Number of VM instances in the scale set"
   type        = number
-  default     = 3
+  default     = 2
 }
 
 variable "admin_username" {
