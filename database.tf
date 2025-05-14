@@ -24,7 +24,7 @@ output "database_name" {
 }
 
 module "cb_nosql" {
-  source              = "git@github.com:melanin-luxe/ml-terraform-modules.git//cosmosdb?ref=v0.0.8"
+  source              = "git@github.com:melanin-luxe/ml-terraform-modules.git//cosmosdb?ref=v0.0.9"
   name                = "cb-documentdb"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
