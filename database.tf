@@ -1,7 +1,7 @@
 
 
 module "ml_label_pgsql" {
-  source            = "git@github.com:melanin-luxe/ml-terraform-modules.git//pgsql?ref=v0.0.2"
+  source            = "git::https://github.com/tbrunoh/ml-terraform-modules.git//pgsql?ref=v0.0.2"
   pg_server_name    = var.pg_server_name
   rg_name           = azurerm_resource_group.rg.name
   rg_location       = azurerm_resource_group.rg.location
@@ -24,7 +24,7 @@ output "database_name" {
 }
 
 module "cb_nosql" {
-  source              = "git@github.com:melanin-luxe/ml-terraform-modules.git//cosmosdb?ref=v0.0.9"
+  source              = "git::https://github.com/tbrunoh/ml-terraform-modules.git//cosmosdb?ref=v0.0.9"
   name                = "cb-documentdb"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
