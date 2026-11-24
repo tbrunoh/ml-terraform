@@ -34,7 +34,7 @@ variable "admin_password" {
   description = "Admin password for VMs"
   type        = string
   sensitive   = true
-  default     = "Psenjen9$"
+  # no default: supply via TF_VAR_admin_password
 }
 
 variable "vm_size" {
@@ -146,7 +146,7 @@ variable "pg_admin_password" {
   description = "Admin password for PostgreSQL"
   type        = string
   sensitive   = true
-  default     = "4VVW1P6sriEK"
+  # no default: supply via TF_VAR_pg_admin_password
 }
 
 variable "pg_sku" {
